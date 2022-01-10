@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        body {
+            height: 100vh;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: red;
+            position: absolute;
+            animation: scale 3s infinite;
+        }
+        @keyframes scale {
+  from {
+    transform: scale(.5, .5);
+    opacity: .5;
+  }
+  to {
+    transform: scale(2.5, 2.5);
+    opacity: 0;
+  }
+}
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function randomInteger(min, max) {
+            var rand = min - 0.5 + Math.random() * (max - min + 1);
+            rand = Math.round(rand);
+            return rand;
+        }
+        document.body.onmouseover = function (e) {
+            console.log(e.clientX, e.clientY);
+            let posX = e.clientX;
+            let posY = e.clientY;
+            let div = document.createElement("div");
+            div.className = "circle";
+            div.style.left = posX - 25 + "px";
+            div.style.top = posY - 25 + "px";
+            document.body.append(div)
+            div.style.background = "#" + randomInteger(1000, 2000)
+        }
+    </script>
+</body>
+
+</html>

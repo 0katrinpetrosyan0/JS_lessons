@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson12</title>
+    <script src="lesson12.js"></script>
+    <style>
+        #but1 {
+            background-color: green;
+            padding: 15px;
+            display: block;
+        }
+
+        #myDIV {
+            background-color: green;
+            width: 100%;
+            height: 80px;
+            margin-top: 30px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .mek {
+            background-color: rgb(221, 111, 203);
+            width: 100%;
+            height: 80px;
+            margin-top: 30px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .erku {
+            background-color: rosybrown;
+            width: 100%;
+            height: 80px;
+            margin-top: 30px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .ereq {
+            background-color: blueviolet;
+            width: 100%;
+            height: 80px;
+            margin-top: 30px;
+            font-size: 18px;
+            text-align: center;
+
+        }
+        div.b{
+            top: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <button  id="but1">Hide</button>
+
+    <div id="myDIV">
+        This is my DIV element.
+    </div>
+    <div class="b">
+
+    
+    <div class="mek">this is thee 1st element</div>
+    <div class="erku">this is thee 2nd element</div>
+    <div class="ereq">this is thee 3rd element</div></div>
+</div>
+    <script>
+        let x = document.getElementById("myDIV");
+        let y = document.getElementById("but1");
+        y.onclick = function () {
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                y.innerText = "Hide"
+                y.style.background = "green";
+            } else {
+                x.style.display = "none";
+                y.innerText = "Show"
+                y.style.background = "red";
+
+            }
+        }
+    </script>
+</body>
+
+</html>

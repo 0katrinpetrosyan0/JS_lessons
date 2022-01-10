@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .global{
+        width: 100vw;
+        height:100vh;
+        position: fixed;
+        top:0;
+        left: 0;
+        background-color: grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    .modal{
+background-color: white;
+width: 600px;
+height: 500px;
+    }
+    </style>
+</head>
+<body>
+   <button class="btn">Open modal window</button>
+<div class="global">
+    <div class = "modal"><span class="close">&#215;</span></div>
+</div>
+<script>
+let button = document.getElementsByClassName("btn")[0];
+let modal = document.getElementsByClassName("modal")[0];
+let close = document.getElementsByClassName("close")[0];
+let global = document.getElementsByClassName("global")[0];
+button.onclick = function(){
+    global.style.display = "flex";
+}
+close.onclick = function(){
+    global.style.display = "none";
+}
+global.onclick = function(e){
+console.log(e.target);
+if(e.target.className == "global"){
+    global.style.display = "none";
+}
+}
+</script>
+</body>
+</html>

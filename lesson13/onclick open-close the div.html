@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.open{
+			list-style: none;
+			display: block;
+			padding: 20px;
+			background-color: pink;
+			width: 100px;
+		}
+		.close{
+			list-style: none;
+			overflow: hidden;
+			width: 0;
+			padding: 10px;
+			height: 100px;
+			background-color: lightgrey;
+		}
+		.close li{
+			opacity:0;
+		}
+		ul{
+			transition:all 0.5s; 
+		}
+	</style>
+</head>
+<body>
+<ul class= "close">
+	<li>home</li>
+	<li>blog</li>
+	<li>about</li>
+</ul>
+<script type="text/javascript">
+	let el = document.getElementsByTagName("ul");
+	for (let i = 0; i < el.length; i++) {
+		el[i].onclick = function(){
+			if(this.classList.contains("close")){
+				this.classList.remove("close");
+				this.classList.add("open");
+			}else{
+				this.classList.remove("open");
+				this.classList.add("close");
+			}
+		}
+	}
+</script>
+</body>
+</html>

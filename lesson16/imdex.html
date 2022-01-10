@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<style type="text/css">
+		body{
+			height: 2000px;
+		}
+		div{
+			background-color: red;
+			width: 210px;
+			height: 100px;
+			position: fixed;
+            
+		}
+		/* img{
+			width: 100px;
+			height: 100px;
+		} */
+	</style>
+</head>
+<body>
+<div id = "block"></div>
+<!-- <div id = "global">
+	<img src="img.jpg"></img>
+	<img src="img.jpg"></img>
+	<img src="img.jpg"></img>
+	<img src="img.jpg"></img>
+</div> -->
+<script type="text/javascript">
+	// let img = document.getElementsByTagName("img");
+	// 	for (var i = 0; i < img.length; i++) {
+	// 	img[i].onclick = function(){
+	// 		console.log(this.getAttribute("src"));
+	// 	}
+	// }
+	let div = document.getElementById("block");
+	window.onscroll = function(){
+	div.style.background = "black";
+	div.style.left = pageYOffset + "px";
+}
+</script>
+</body>
+</html>

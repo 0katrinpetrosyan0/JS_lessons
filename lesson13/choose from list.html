@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    #myInput {
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+
+    #myUL {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #myUL li a {
+      border: 2px solid #ddd;
+      margin-top: -1px;
+      background-color: lightgrey;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      display: block
+    }
+
+    #myUL li a:hover {
+      background-color: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="myInput" placeholder="Search for names.." title="Type in a name">
+
+  <ul id="myUL">
+    <li><a href="#"><strong>A</strong></a></li>
+    <li><a href="#">Armine</a></li>
+    <li><a href="#">Anastasya</a></li>
+    <li><a href="#">Ani</a></li>
+    <li><a href="#"><strong>B</strong></a></li>
+    <li><a href="#">Beatrisya</a></li>
+    <li><a href="#">Bella</a></li>
+    <li><a href="#"><strong>G</strong></a></li>
+    <li><a href="#">Gayane</a></li>
+    <li><a href="#">Gohar</a></li>
+    <li><a href="#">Gexani</a></li>
+  </ul>
+
+  <script>
+    let input = document.getElementById("myInput");
+    input.onkeyup = function () {
+      let filter = input.value.toUpperCase();
+      let ul = document.getElementById("myUL");
+      let li = ul.getElementsByTagName("li");
+      for (let i = 0; i < li.length; i++) {
+        let txtValue = li[i].getElementsByTagName("a")[0].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) != -1) {
+          li[i].style.display = "block";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>

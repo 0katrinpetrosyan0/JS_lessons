@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "b1">hi block1</div>
+        <div class = "b2">hi block2</div>
+        <div class = "b3">hi block2</div>
+        <script type="text/javascript">
+        let divTags = document.getElementsByTagName("div");
+        let count = 0;
+        for (let i = 0; i < divTags.length; i++) {
+            divTags[i].onclick = function(event){
+                event.target.style.background = "red";
+                // count++;
+                if(count++ % 2 == 0){
+                event.target.style.background = "black";
+                }else{
+                event.target.style.background = "blue";
+                }
+            }
+        }
+        </script>
+</body>
+</html>
+
+

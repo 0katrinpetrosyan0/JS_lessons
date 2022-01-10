@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <input type="text" name="text">
+        <input type="submit" name="submit">
+    </form>
+    <ul>
+        
+    </ul>
+    <script type="text/javascript">
+        let form = document.querySelector("form");
+        let text = document.getElementsByTagName("ul")[0];
+        form.onsubmit = function(){
+            let select = document.querySelector("input[type='text']").value;
+            if(select.trim() != ""){
+                let li = document.createElement("li");
+                li.innerHTML = select;
+                this.reset();
+                text.append(li)
+            }
+            return false;
+        }
+    </script>
+    
+</body>
+</html>

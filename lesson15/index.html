@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        ul {
+            background-color: skyblue;
+            width: 100%;
+            height: 30px;
+            list-style-type: none;
+        }
+
+        .fix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        #button {
+            /*display: none;*/
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: green;
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 30px;
+        }
+
+        #button.hide {
+            display: none;
+
+        }
+
+        #button.show {
+            display: flex;
+        }
+
+        ​
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div id="button" class="hide">&#8593;</div>
+    /* <input type="text" name="text" oninput="myFunc(event)"> */
+    
+    <script>
+        /* function myFunc(val) {
+            var x = val.target.value.split("");
+            for (var i = 0; i < x.length; i++) {
+
+                if (!isNaN(x[i])) {
+                    x.splice(i--, 1);
+
+                }
+            }
+            val.target.value = x.join("")
+
+        } */
+        let menu = document.getElementById("menu");
+        let button = document.getElementById("button");
+        window.onscroll = function () {
+            console.log(window.pageYOffset)
+            if (window.pageYOffset > 300) {
+                menu.className = "fix";
+                button.classList.add("show");
+
+            } else {
+                menu.className = "";
+                button.classList.remove("show");
+
+            }
+        }
+        button.onclick = function () {
+            window.scrollTo({
+                left: 0,
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>button onclick()</title>
+    <style>
+button{
+    width:100px;
+    height: 60px;
+    background-color: rgb(137, 248, 103);
+    color:white;
+}
+    </style>
+</head>
+
+<body>
+    <button id="first"><a>0</a></button>
+    <button id="second"><a>0</a></button>
+    <script>
+        let first = document.getElementById("first");
+        let second = document.getElementById("second");
+        let count1 = 0;
+        let count2 = 0;
+        first.onclick = function(){
+            count1 +=1
+            first.innerText = count1;
+
+        }
+        second.onclick = function(){
+            count2 +=1
+            second.innerText = count2;
+
+        }
+    </script>
+</body>
+
+</html>

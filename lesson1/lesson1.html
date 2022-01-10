@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript lesson 1</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- <script src="https://js.cx/hello/ads.js?speed=0"></script> -->
+</head>
+<body>
+
+<!-- Программы на языке JavaScript можно вставить в любое место HTML при помощи тега SCRIPT -->
+<!-- <script>
+    alert('Hello JavaScript');
+</script> -->
+
+
+<!-- Вставка скрипта на страницу --------------------------------------------->
+<!-- Обязательно установить кодировку документа -->
+
+<!-- <script type="text/javascript">
+    <alert("Привет JavaScript");
+</script> -->
+
+<!--<script language="JavaScript">-->
+    <!--alert("Привет JavaScript");-->
+<!--</script>-->
+
+<!--<script>-->
+    <!--alert("Привет JavaScript");-->
+<!--</script>-->
+
+
+<!-- Практическая работа -->
+<!--Сделайте страницу, которая выводит «Я – JavaScript!».-->
+
+
+
+<!-- Создадим простой скрипт и посмотрим как он работает ----------->
+ <!--Шаг первый -->
+<!-- <p>Начало HTML документа...</p> -->
+ <!--Шаг второй -->
+ <!-- <script>alert('ggg')</script> -->
+ <!--Шаг третий -->
+<!-- <p>Конец HTML документа...</p> -->
+
+<!--<script>-->
+    <!--alert( 'Привет, JavaScript !!!' );-->
+<!--</script>-->
+
+
+<!-- Внешние скрипты, порядок исполнения -->
+<!--Чтобы подключить несколько скриптов-->
+<!-- <script src="js/lesson1.js"></script> -->
+<!-- <script src="js/lesson1.1.js"></script> -->
+
+
+
+<!-- Если указан атрибут src, то содержимое тега игнорируется. ------->
+<!-- <script src="js/lesson1.js">
+    alert('Внуренний alert'); // Не будет работать-->
+<!-- </script> -->
+
+
+
+<!-- Асинхронные скрипты: defer/async -->
+<!-- Синхронный пример -->
+<!--<p>Первый параграф...</p>-->
+<!-- <script> -->
+    <!--alert('Первый alert!');-->
+    <!--alert('Второй alert!');-->
+    <!--alert('Третий alert!');-->
+<!--</script>-->
+<!--<p>Второй параграф...</p>-->
+
+
+
+<!-- Очередь выполнения ( Синхронный ) -------------------------------------->
+<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi ipsam, libero magnam rem sapiente?</p>-->
+<!--<script>-->
+    <!--alert('Hello World !!!');-->
+<!--</script>-->
+<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi ipsam, libero magnam rem sapiente?</p>-->
+
+
+
+<!-- Искусственная задержка скрипта 1 --------------------------------------->
+<!--<p>Важная информация 1</p>-->
+<!--<script src="https://js.cx/hello/ads.js?speed=0"></script>-->
+<!--<p>Важная информация 2</p>-->
+
+
+
+<!-- Искусственная задержка скрипта 2 --------------------------------------->
+ <!--В head нужно активировать script -->
+
+<!--<script src="https://js.cx/hello/ads.js?speed=0"></script>-->
+<!--<ul>-->
+    <!--<li><a href="#">Items 1</a></li>-->
+    <!--<li><a href="#">Items 2</a></li>-->
+    <!--<li><a href="#">Items 3</a></li>-->
+    <!--<li><a href="#">Items 4</a></li>-->
+    <!--<li><a href="#">Items 5</a></li>-->
+<!--</ul>-->
+
+
+
+<!-- Асинхронное выполнение скрипта async ---------------------------------->
+
+<!--<p>Важная информация 1</p>-->
+<!-- <script async src="https://js.cx/hello/ads.js?speed=0"></script>
+<script defer src="js/lesson1.js"></script> -->
+<!--<p>Важная информация 2</p>-->
+
+
+
+<!-- Асинхронное выполнение скрипта defer ---------------------------------->
+<!-- <p>Важная информация 1</p> -->
+<!-- <script defer src="https://js.cx/hello/ads.js?speed=0"></script> -->
+<!-- <script defer src="js/lesson1.js"></script> -->
+<!--<p>Важная информация 2</p>-->
+
+
+
+<!-- Тег скрип можно добавить на страницу и через JavaScript код -->
+<!-- и такой скрип будет работать как (async) но чтобы сохранить -->
+<!-- относительный порядок нужно использовать script.async = false -->
+<!-- Выглядит это примерно так: -->
+<!-- Aram - Gor -->
+<!--
+<script>
+    function addScript(src){
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = false;
+        document.head.appendChild(script);
+    }
+    addScript('js/lesson1.js');
+    addScript('js/lesson2.js');
+    addScript('js/lesson3.js');
+</script>
+-->
+
+
+<!--
+При одновременном указании async и defer в современных браузерах будет
+использован только async, в IE9- – только defer (не понимает async).
+
+Атрибуты async/defer работают только в том случае,
+если назначены на внешние скрипты, т.е. имеющие src.
+-->
+
+
+
+<!-- Если JavaScript кода много то выносим в отдельный файл ----------->
+<script src="js/lesson1-file-2.js"></script>
+<script src="js/lesson1.js"></script>
+</body>
+</html>

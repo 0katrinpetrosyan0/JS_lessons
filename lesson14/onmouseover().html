@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div onMouseOver="mouseOver()" onMouseOut="mouseOut()"> </div>
+
+    <script>
+        var myDiv = document.createElement("div");
+        myDiv.style.border ="3px solid red";
+        myDiv.style.width ="600px";
+        myDiv.style.height ="600px";
+        document.body.appendChild(myDiv);
+        function mouseOver() {
+            var posX = myDiv.clientX;
+            var posY = myDiv.clientY;
+            myDiv.style.left = posX + "px";
+            myDiv.style.top = posY + "px";
+            myDiv.innerText="O";
+        }
+
+        function mouseOut() {
+
+        }
+    </script>
+</body>
+
+</html>

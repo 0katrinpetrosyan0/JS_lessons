@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<style type="text/css">
+		.red{
+			border: 2px solid red;
+		}
+	</style>
+</head>
+<body>
+<form action="" name="form">
+	<label>Login: <br>
+		<input type="email"  id="email">
+	</label>
+	<br>
+	<label>Password:<br>
+		<input type="password" id="password">
+	</label>
+<br>
+<label>check name:<br>
+<input type="name" id="name">
+</label><br>
+<label>Male:
+		<input type="radio"  name="radio" id="radio1">
+	</label>
+<br>
+<label>female:
+		<input type="radio" name="radio" id="radio2">
+	</label>
+<br>
+<button disabled>Submit</button>
+</form>
+<script type="text/javascript">
+	let login = document.getElementById('email');
+	let password = document.getElementById('password');
+	let name = document.getElementById('name');
+	let radio1 = document.getElementById('radio1');
+	let radio2 = document.getElementById('radio2');
+	console.log(login.value)
+	login.onblur = function(){
+		if (!validateEmail(this.value)) {
+			this.className = "red";
+		}else{
+			this.className = "";
+		}
+}
+	password.onblur = function(){
+		if (this.value == "" || this.value == null) {
+			this.className = "red";
+		}else{
+			this.className = "";
+		}
+}
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+} 
+</script>
+</body>
+</html>

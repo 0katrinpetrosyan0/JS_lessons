@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select onchange="changeClass()">
+        <option value="1">Armenia</option>
+        <option value="2">Russia</option>
+        <option value="3">Georgia</option>
+    </select>
+    <select onchange="changeClass()">
+            <option value="1">Yerevan</option>
+            <option value="2">Moscow</option>
+            <option value="3">Tbilisi</option>
+        </select>
+<script>    
+    let sel = document.querySelectorAll('select');
+    function first(){
+        sel.forEach(elem ){
+        let x = event.target.value;
+        elem.value = x;
+        }
+    };
+    var data = [];
+    function changeClass(select) {
+        data.push(select.value);
+    
+</script>
+</body>
+</html>

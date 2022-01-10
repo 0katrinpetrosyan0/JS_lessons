@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.first{
+			width: 400px;
+			height: 60px;
+			background-color: lightgrey;
+		}
+		.second{
+			width: 10%;
+			height: 60px;
+			background-color: green;
+			text-align:center;
+			color: white;
+			line-height: 60px;
+		}
+		button{
+	
+			height: 40px;
+			width: 100px;
+			color: white;
+		}
+		.green{
+			background-color: green;
+​
+		}
+		.red{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="first">
+		<div class="second">10%</div>
+	</div>
+	<button id= "Start" class= "green">Start</button>
+​
+<script type="text/javascript">
+	let width = 10;
+	let id;
+	let green = document.getElementsByClassName("second")[0];
+	let button = document.getElementById("Start");
+	button.onclick = function(){
+		button.classList.toggle("red");
+		if(button.classList.contains("red")){
+			button.innerHTML = "Stop";
+			id = setInterval(function(){
+				width++;
+				green.style.width = width + "%";
+				green.innerHTML = width + "%";
+				if(width >=100){
+					clearInterval(id)
+				}
+			},100)
+		}
+	else{
+		button.innerHTML = "Start";
+		
+		clearInterval(id);
+	}
+	if (width === 100) {
+		width = 10;
+	}
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+var car = {
+    bmw: '100.000',
+    nissan: '40.000',
+    lada: '1.000',
+    audi: '80.000',
+    lexus: '120.000'
+};
+ for (var key in car){
+break;
+ }
+var value = 0;
+var value1 = car[key];
+var name = '';
+var name1 = '';
+for (var key in car){
+    if(value < parseFloat(car[key])){
+        value = car[key];
+        name = key;
+    }
+}
+for (var key1 in car){
+    if(value1 > parseFloat(car[key1])){
+        value1 = car[key1];
+        name1 = key1;
+    }
+}
+document.write(name + ' - ' + value + '<br>');
+document.write(name1 + ' - ' + value1);
+var div = {
+    className: 'myStyle main',
+
+};
+function addClass(obj, cls) {
+    var classes = obj.className ? obj.className.split(' ') : [];
+    for (const key in div) {
+        if (div[key] == cls) {
+            alert("yees!!");
+            return;
+        }
+    }
+    classes.push(cls);
+    obj.className = classes.join(' ');
+}
+addClass(div, 'menu');
+alert(div.className);
+var car = {
+    bmw: '100.000',
+    nissan: '40.000',
+    lada: '1.000',
+    audi: '80.000',
+    lexus: '120.000'
+};
+
+function upperCaseFirst(str) {
+    var newStr = str[0].toUpperCase() + str.slice(1);
+    return newStr;
+}
+
+for (var key in car) {
+    document.write(upperCaseFirst(key) +" - "+ car[key] + "<br>");
+}
+
+
+var p={
+    color:"black",
+    size:"big"
+}
+var o = {
+    name: "Jon",
+    size:"small"
+};
+
+// console.log(o);
+for (var size in o) {
+    p[size] = o[size];
+}
+
+// console.log(o);
+console.log(p);
+// p.country = "USA";
+// p.age  = 50;
+// console.log(o);
+// console.log(p);
+    </script>
+</body>
+</html>

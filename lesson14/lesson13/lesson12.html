@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript lesson 10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lesson12.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, Verdana, sans-serif;
+        }
+
+        ul, ol {
+            list-style-type: none;
+        }
+
+        .alert {
+            width: 70%;
+            margin: 0 auto 15px auto;
+            padding: 15px;
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+            color: #2e602e;
+            background-color: #dff0d8;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .alert {
+                width: 100%;
+                margin: 0;
+                box-sizing: border-box;
+            }
+        }
+
+        .text-block {
+            border: 1px solid #789;
+            width: 300px;
+            padding: 10px;
+        }
+
+        /*buble*/
+        body {
+            height: 100vh;
+        }
+
+        .buble {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            border: 1px solid coral;
+            animation: myAnim 1s ease-in-out infinite;
+        }
+
+        @keyframes myAnim {
+            0% {
+                transform: scale(1);
+            }
+            70% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /*buble End*/
+
+
+    </style>
+</head>
+<body>
+
+
+<!--<button type="button" onclick="alert('Hello World !!!');">Open Alert</button>-->
+
+<!--<button type="button" onclick="countPhone();">Call function</button>-->
+
+<!--<h2>Hello JavaScript !!!</h2>-->
+
+<!--<ol id="list">-->
+    <!--<li>0</li>-->
+    <!--<li>1</li>-->
+    <!--<li>2</li>-->
+<!--</ol>-->
+
+
+<!--<form action="#" id="numForm">-->
+    <!--<input type="text" name="num" id="num">-->
+    <!--<input type="submit" name="submit" value="Send">-->
+<!--</form>-->
+<!--<ul id="resultList">-->
+
+<!--</ul>-->
+
+<!--<ol id="list">-->
+    <!--<li>0</li>-->
+    <!--<li>2</li>-->
+<!--</ol>-->
+
+
+<!--Меняем местами-->
+<!--<p>First</p>-->
+<!--<p>Second</p>-->
+
+<!-- удаление элемента -->
+<!--<button type="button" id="delete">-->
+<!--Delete <i class="fa fa-trash" aria-hidden="true"></i>-->
+<!--</button>-->
+<!--<br>-->
+<!--<br>-->
+<!--<div id="img-block">-->
+<!--<img src="http://lorempixel.com/400/200/sports/" id="sport" alt="Sport">-->
+<!--</div>-->
+
+<!-- Добавление множества узлов -->
+<!--<ul>-->
+<!--<li>1</li>-->
+<!--<li>2</li>-->
+<!--<li>5</li>-->
+<!--</ul>-->
+
+<!-- append(), prepend(), after(), before(), replaceWith() -->
+<!--<p class="text-block" id="text-block">Lorem ipsum dolor.</p>-->
+
+
+<!-- Style -->
+<!--<button id="btn">Button</button>-->
+
+<!-- Для получения текущего используемого значения свойства, используется метод window.getComputedStyle -->
+<!--<button type="button" id="blue-btn">Button</button>-->
+
+
+<!-- Размеры и прокрутка элементов -->
+
+
+<!--<div class="content-block">-->
+<!--<div id="example" class="example">-->
+<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->
+<!--Atque culpa doloremque esse ex exercitationem, harum impedit-->
+<!--incidunt iste iusto magni modi nisi, odit, officia porro quaerat rem-->
+<!--veniam! Adipisci aliquam aperiam asperiores autem consectetur-->
+<!--dolores dolorum, fuga hic illum impedit obcaecati praesentium-->
+<!--quaerat quod repellendus saepe suscipit tenetur totam unde vel-->
+<!--voluptatem. Asperiores, cumque dolorum eligendi fugiat hic pariatur-->
+<!--quisquam suscipit tempore totam! Consectetur illo nam voluptas.-->
+<!--Distinctio eius eligendi incidunt maxime molestiae nisi omnis rerum-->
+<!--tempore ut, vel? Consequatur dolor eos error expedita impedit optio-->
+<!--quia sequi? Accusamus asperiores aut beatae consequuntur debitis ea-->
+<!--error et eum ex excepturi explicabo fuga hic impedit labore, laboriosam-->
+<!--maiores minima minus obcaecati possimus quasi quia repellat reprehenderit,-->
+<!--suscipit tempore, temporibus velit veniam. Consequuntur, impedit-->
+<!--ipsum minima non quam quidem repellat repudiandae sapiente-->
+<!--soluta voluptatem! Aspernatur atque beatae blanditiis cumque dolore-->
+<!--eum eveniet exercitationem explicabo itaque magnam magni molestias-->
+<!--necessitatibus nisi quae quam quod quos similique ut, velit vitae-->
+<!--voluptatem voluptates voluptatum? Aliquid corporis dignissimos,-->
+<!--dolor illum possimus praesentium quos reiciendis reprehenderit?-->
+<!--Atque culpa, ex exercitationem officiis reprehenderit vel. Ab amet,-->
+<!--dignissimos distinctio eaque et fugit sit ullam! Alias amet atque-->
+<!--commodi cum cumque deleniti doloremque eligendi est, facilis-->
+<!--impedit iste non nulla officia omnis porro provident quaerat quia,-->
+<!--quibusdam suscipit veniam! Accusantium aliquam amet architecto-->
+<!--aut cumque debitis dolor doloremque doloribus ducimus error-->
+<!--esse est ex fuga, fugiat hic laboriosam modi molestiae nesciunt-->
+<!--nihil numquam obcaecati officiis quaerat quam recusandae-->
+<!--repellat sed similique totam ullam veniam vitae.-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--<div id="menu" class="menu"></div>-->
+<!--<div class="container">-->
+<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores assumenda commodi consequuntur-->
+<!--cupiditate delectus deleniti eaque eligendi minus molestiae molestias, non odit omnis quaerat quo, reiciendis-->
+<!--repellendus temporibus, veritatis. Dolore eaque in omnis pariatur placeat sit tempora temporibus unde? At autem-->
+<!--distinctio dolores fuga harum impedit libero minima, modi quidem quo unde veritatis voluptatibus. Accusantium-->
+<!--amet, corporis cupiditate doloribus ducimus earum facilis in molestiae nam neque omnis quas quibusdam-->
+<!--repudiandae suscipit unde? Aliquid, consequatur debitis earum eligendi ipsum, nostrum numquam possimus quibusdam-->
+<!--ratione suscipit vitae voluptas. Adipisci at error exercitationem fuga, incidunt, ipsum itaque magni maxime-->
+<!--mollitia natus necessitatibus quo recusandae, soluta temporibus totam ullam voluptate. Architecto aut autem esse-->
+<!--facere id itaque laboriosam nam nihil recusandae? Ab accusamus ad animi aspernatur at atque consequuntur-->
+<!--distinctio earum eligendi et ex fuga hic impedit ipsa ipsum magnam minima minus modi nam necessitatibus nulla-->
+<!--officiis omnis perferendis possimus praesentium rem, rerum saepe sit soluta sunt tempora totam ullam unde-->
+<!--veritatis vero voluptatibus voluptatum. Ad minima omnis quam voluptas voluptatibus. Accusantium ad architecto-->
+<!--aspernatur atque blanditiis consectetur consequatur culpa debitis dicta dolores dolorum eius fugit illum itaque,-->
+<!--iusto libero minus molestiae natus nobis provident quae quas quibusdam repellendus reprehenderit sunt tempore-->
+<!--ullam vel voluptate voluptatem voluptatum. Architecto consequatur cumque exercitationem minus, repudiandae-->
+<!--similique! alias aliquam aliquid amet blanditiis consequuntur, doloribus minima molestiae non numquam-->
+<!--officiis optio quam qui recusandae rem saepe sequi similique sunt vero voluptates? At, aut consequatur esse-->
+<!--fugiat id pariatur quae quas ut vero? Accusantium asperiores assumenda, corporis cupiditate dolorem fugiat,-->
+<!--illum iste laborum magnam minus, modi nihil optio quam quia quis quisquam reiciendis repellendus sit sunt-->
+<!--veniam. Assumenda beatae dolor doloribus nesciunt quaerat. Consequatur cumque debitis, dolor dolorum eaque-->
+<!--eligendi eos et hic id molestias, nesciunt nobis non officiis perferendis provident recusandae veritatis? Alias-->
+<!--aspernatur aut commodi culpa cumque dolore dolores eos et exercitationem fugiat harum hic in iure maiores minima-->
+<!--modi odio praesentium quas qui quia quidem quis quod similique sint sit vitae, voluptas voluptate! Eaque nam-->
+<!--reiciendis sequi. Consectetur fugiat inventore ipsa nesciunt reiciendis sed, vitae? Alias consequatur cumque-->
+<!--dicta distinctio dolores eos, error eum ex fugit iure libero nam odio perferendis quos soluta suscipit ullam ut-->
+<!--vero, voluptates voluptatibus. 1Accusantium commodi ducimus fugiat nulla obcaecati perferendis quisquam repellat-->
+<!--saepe temporibus voluptatibus? Eaque earum fugit maxime minima nostrum nulla possimus quis sit totam voluptatem.-->
+<!--Ad at beatae cupiditate distinctio doloremque, laborum libero maxime minus nobis quidem quis reiciendis-->
+<!--reprehenderit totam. Adipisci autem consectetur consequatur, culpa cum deserunt enim est eum iste itaque minima-->
+<!--neque officiis placeat provident quam quasi, soluta. Ab accusantium aliquid asperiores aut beatae deleniti eos-->
+<!--in iste magni, modi molestiae mollitia natus nesciunt, non officia quia, similique vitae voluptatem? Culpa-->
+<!--debitis distinctio dolore ea eaque ipsa iste, iusto labore magnam molestiae nulla optio quas quo similique-->
+<!--tempora temporibus voluptatibus! Autem commodi, debitis, dolores ducimus earum expedita inventore laborum-->
+<!--pariatur quam quisquam repudiandae suscipit tempora. Aliquam animi consequatur dolores eos excepturi illum ipsam-->
+<!--iste, magnam magni obcaecati odit officia provident quidem repellendus reprehenderit similique vel. A alias-->
+<!--architecto consequuntur distinctio enim eum expedita iusto sint vel! <b>Accusamus</b> eos expedita laudantium libero-->
+<!--minus nihil sit ut veniam, voluptas voluptate. Ab asperiores aspernatur atque aut consequatur cupiditate dolore-->
+<!--dolorum ducimus expedita fugiat illo itaque laboriosam maxime minima nostrum obcaecati quasi qui quis quisquam-->
+<!--recusandae repellat reprehenderit rerum, saepe sapiente sed, sequi soluta temporibus, totam ut velit veniam vero-->
+<!--vitae voluptates. 2 Accusamus adipisci animi architecto aut blanditiis debitis deleniti dignissimos ducimus ea-->
+<!--eaque earum eos error fuga fugiat hic id iste maxime minus modi nulla obcaecati odit perferendis quod ratione,-->
+<!--reiciendis repudiandae saepe, sapiente, sequi similique temporibus totam vero voluptatem voluptates! Architecto-->
+<!--cumque deserunt, dolorum eveniet nemo qui quis quisquam quo reprehenderit sunt. Beatae harum necessitatibus-->
+<!--repudiandae vitae? At consequuntur excepturi illum laudantium minima molestias numquam quam quibusdam sint-->
+<!--tempore! Ad alias at consequatur ipsum labore laudantium molestiae nihil officiis perferendis quam quod, saepe-->
+<!--sunt temporibus, ut vitae! Dolor dolore doloribus iusto magnam molestiae obcaecati quaerat repellendus saepe-->
+<!--sint suscipit. Alias atque consectetur cumque fugiat laudantium minus voluptatem. Accusantium adipisci amet-->
+<!--aperiam aspernatur commodi, delectus doloribus ducimus enim eos illum labore laudantium molestias natus nihil-->
+<!--sit tempora tempore, velit. A accusamus, accusantium adipisci aliquam architecto, aut consequuntur dolor dolorem-->
+<!--dolorum ducimus ea eius eum expedita, itaque labore laudantium magni minus molestias nostrum obcaecati pariatur-->
+<!--perspiciatis quas quo ratione veritatis vero vitae voluptates! Animi autem consequuntur deleniti esse iusto-->
+<!--magnam modi nobis odit, officiis quod! Autem consequuntur distinctio nisi praesentium provident tempore? Ad-->
+<!--aliquam, animi, error explicabo facere fugit in ipsam iste iure necessitatibus perspiciatis quibusdam sequi sint-->
+<!--tempora ullam? Commodi cum ea eligendi, esse expedita in nam natus nesciunt, nihil quasi rerum, tenetur veniam.-->
+<!--Adipisci beatae consequatur dolor nihil omnis saepe temporibus! At blanditiis dolore perferendis porro-->
+<!--praesentium quibusdam repellat soluta vero voluptatem. Adipisci aperiam eum, excepturi explicabo fugiat id-->
+<!--itaque maxime reiciendis rerum temporibus. Architecto blanditiis expedita hic magni maiores repudiandae rerum-->
+<!--unde. Blanditiis eaque odio quasi! Accusamus ad aliquid animi blanditiis cumque debitis distinctio eos expedita-->
+<!--facere fugiat id incidunt neque nesciunt, nulla placeat qui quos reprehenderit repudiandae voluptatem-->
+<!--voluptatum. Animi asperiores ducimus eaque enim ipsam porro saepe suscipit voluptas? Accusantium consectetur-->
+<!--debitis delectus, eum maiores mollitia saepe tenetur? Aliquam at atque cupiditate dolore esse non placeat-->
+<!--praesentium quam rem! Adipisci et numquam voluptate. Consectetur consequatur doloremque mollitia nostrum-->
+<!--voluptates! Cumque eaque enim, eum fuga, hic in laboriosam officia possimus quaerat recusandae, repellendus-->
+<!--velit? Ab accusamus, dolorem est in maxime nihil porro quo repudiandae similique sint voluptatem voluptates?-->
+<!--Accusamus autem commodi consequuntur culpa deleniti dicta dignissimos doloribus eos, iure laudantium minima-->
+<!--mollitia nisi odit officia possimus quos ratione sapiente temporibus voluptatem voluptatum? Accusamus adipisci-->
+<!--alias aliquam aliquid amet architecto atque consequuntur corporis cupiditate dicta doloribus et fuga ipsa iusto-->
+<!--maxime minima modi natus nobis nostrum obcaecati praesentium provident quaerat, quasi quia quibusdam quod-->
+<!--recusandae repellat repellendus sunt suscipit, vel veniam vitae, voluptates! Debitis dolorum eum expedita fugit-->
+<!--hic porro similique sunt. Amet at culpa doloremque ducimus magnam, neque officiis quos saepe similique tenetur-->
+<!--voluptates.</p>-->
+<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores assumenda commodi consequuntur-->
+<!--cupiditate delectus deleniti eaque eligendi minus molestiae molestias, non odit omnis quaerat quo, reiciendis-->
+<!--repellendus temporibus, veritatis. Dolore eaque in omnis pariatur placeat sit tempora temporibus unde? At autem-->
+<!--distinctio dolores fuga harum impedit libero minima, modi quidem quo unde veritatis voluptatibus. Accusantium-->
+<!--amet, corporis cupiditate doloribus ducimus earum facilis in molestiae nam neque omnis quas quibusdam-->
+<!--repudiandae suscipit unde? Aliquid, consequatur debitis earum eligendi ipsum, nostrum numquam possimus quibusdam-->
+<!--ratione suscipit vitae voluptas. Adipisci at error exercitationem fuga, incidunt, ipsum itaque magni maxime-->
+<!--mollitia natus necessitatibus quo recusandae, soluta temporibus totam ullam voluptate. Architecto aut autem esse-->
+<!--facere id itaque laboriosam nam nihil recusandae? Ab accusamus ad animi aspernatur at atque consequuntur-->
+<!--<button type="button" id="scrollBtn">Button</button>-->
+<!--distinctio earum eligendi et ex fuga hic impedit ipsa ipsum magnam minima minus modi nam necessitatibus nulla-->
+<!--officiis omnis perferendis possimus praesentium rem, rerum saepe sit soluta sunt tempora totam ullam unde-->
+<!--veritatis vero voluptatibus voluptatum. Ad minima omnis quam voluptas voluptatibus. Accusantium ad architecto-->
+<!--aspernatur atque blanditiis consectetur consequatur culpa debitis dicta dolores dolorum eius fugit illum itaque,-->
+<!--iusto libero minus molestiae natus nobis provident quae quas quibusdam repellendus reprehenderit sunt tempore-->
+<!--ullam vel voluptate voluptatem voluptatum. Architecto consequatur cumque exercitationem minus, repudiandae-->
+<!--similique! Accusamus alias aliquam aliquid amet blanditiis consequuntur, doloribus minima molestiae non numquam-->
+<!--officiis optio quam qui recusandae rem saepe sequi similique sunt vero voluptates? At, aut consequatur esse-->
+<!--fugiat id pariatur quae quas ut vero? Accusantium asperiores assumenda, corporis cupiditate dolorem fugiat,-->
+<!--illum iste laborum magnam minus, modi nihil optio quam quia quis quisquam reiciendis repellendus sit sunt-->
+<!--veniam. Assumenda beatae dolor doloribus nesciunt quaerat. Consequatur cumque debitis, dolor dolorum eaque-->
+<!--eligendi eos et hic id molestias, nesciunt nobis non officiis perferendis provident recusandae veritatis? Alias-->
+<!--aspernatur aut commodi culpa cumque dolore dolores eos et exercitationem fugiat harum hic in iure maiores minima-->
+<!--modi odio praesentium quas qui quia quidem quis quod similique sint sit vitae, voluptas voluptate! Eaque nam-->
+<!--reiciendis sequi. Consectetur fugiat inventore ipsa nesciunt reiciendis sed, vitae? Alias consequatur cumque-->
+<!--dicta distinctio dolores eos, error eum ex fugit iure libero nam odio perferendis quos soluta suscipit ullam ut-->
+<!--vero, voluptates voluptatibus. Accusantium commodi ducimus fugiat nulla obcaecati perferendis quisquam repellat-->
+<!--saepe temporibus voluptatibus? Eaque earum fugit maxime minima nostrum nulla possimus quis sit totam voluptatem.-->
+<!--Ad at beatae cupiditate distinctio doloremque, laborum libero maxime minus nobis quidem quis reiciendis-->
+<!--reprehenderit totam. Adipisci autem consectetur consequatur, culpa cum deserunt enim est eum iste itaque minima-->
+<!--neque officiis placeat provident quam quasi, soluta. Ab accusantium aliquid asperiores aut beatae deleniti eos-->
+<!--in iste magni, modi molestiae mollitia natus nesciunt, non officia quia, similique vitae voluptatem? Culpa-->
+<!--debitis distinctio dolore ea eaque ipsa iste, iusto labore magnam molestiae nulla optio quas quo similique-->
+<!--tempora temporibus voluptatibus! Autem commodi, debitis, dolores ducimus earum expedita inventore laborum-->
+<!--pariatur quam quisquam repudiandae suscipit tempora. Aliquam animi consequatur dolores eos excepturi illum ipsam-->
+<!--iste, magnam magni obcaecati odit officia provident quidem repellendus reprehenderit similique vel. A alias-->
+<!--architecto consequuntur distinctio enim eum expedita iusto sint vel! Accusantium eos expedita laudantium libero-->
+<!--minus nihil sit ut veniam, voluptas voluptate. Ab asperiores aspernatur atque aut consequatur cupiditate dolore-->
+<!--dolorum ducimus expedita fugiat illo itaque laboriosam maxime minima nostrum obcaecati quasi qui quis quisquam-->
+<!--recusandae repellat reprehenderit rerum, saepe sapiente sed, sequi soluta temporibus, totam ut velit veniam vero-->
+<!--vitae voluptates. Accusamus adipisci animi architecto aut blanditiis debitis deleniti dignissimos ducimus ea-->
+<!--eaque earum eos error fuga fugiat hic id iste maxime minus modi nulla obcaecati odit perferendis quod ratione,-->
+<!--reiciendis repudiandae saepe, sapiente, sequi similique temporibus totam vero voluptatem voluptates! Architecto-->
+<!--cumque deserunt, dolorum eveniet nemo qui quis quisquam quo reprehenderit sunt. Beatae harum necessitatibus-->
+<!--repudiandae vitae? At consequuntur excepturi illum laudantium minima molestias numquam quam quibusdam sint-->
+<!--tempore! Ad alias at consequatur ipsum labore laudantium molestiae nihil officiis perferendis quam quod, saepe-->
+<!--sunt temporibus, ut vitae! Dolor dolore doloribus iusto magnam molestiae obcaecati quaerat repellendus saepe-->
+<!--sint suscipit. Alias atque consectetur cumque fugiat laudantium minus voluptatem. Accusantium adipisci amet-->
+<!--aperiam aspernatur commodi, delectus doloribus ducimus enim eos illum labore laudantium molestias natus nihil-->
+<!--sit tempora tempore, velit. A accusamus, accusantium adipisci aliquam architecto, aut consequuntur dolor dolorem-->
+<!--dolorum ducimus ea eius eum expedita, itaque labore laudantium magni minus molestias nostrum obcaecati pariatur-->
+<!--perspiciatis quas quo ratione veritatis vero vitae voluptates! Animi autem consequuntur deleniti esse iusto-->
+<!--magnam modi nobis odit, officiis quod! Autem consequuntur distinctio nisi praesentium provident tempore? Ad-->
+<!--aliquam, animi, error explicabo facere fugit in ipsam iste iure necessitatibus perspiciatis quibusdam sequi sint-->
+<!--tempora ullam? Commodi cum ea eligendi, esse expedita in nam natus nesciunt, nihil quasi rerum, tenetur veniam.-->
+<!--Adipisci beatae consequatur dolor nihil omnis saepe temporibus! At blanditiis dolore perferendis porro-->
+<!--praesentium quibusdam repellat soluta vero voluptatem. Adipisci aperiam eum, excepturi explicabo fugiat id-->
+<!--itaque maxime reiciendis rerum temporibus. Architecto blanditiis expedita hic magni maiores repudiandae rerum-->
+<!--unde. Blanditiis eaque odio quasi! Accusamus ad aliquid animi blanditiis cumque debitis distinctio eos expedita-->
+<!--facere fugiat id incidunt neque nesciunt, nulla placeat qui quos reprehenderit repudiandae voluptatem-->
+<!--voluptatum. Animi asperiores ducimus eaque enim ipsam porro saepe suscipit voluptas? Accusantium consectetur-->
+<!--debitis delectus, eum maiores mollitia saepe tenetur? Aliquam at atque cupiditate dolore esse non placeat-->
+<!--praesentium quam rem! Adipisci et numquam voluptate. Consectetur consequatur doloremque mollitia nostrum-->
+<!--voluptates! Cumque eaque enim, eum fuga, hic in laboriosam officia possimus quaerat recusandae, repellendus-->
+<!--velit? Ab accusamus, dolorem est in maxime nihil porro quo repudiandae similique sint voluptatem voluptates?-->
+<!--Accusamus autem commodi consequuntur culpa deleniti dicta dignissimos doloribus eos, iure laudantium minima-->
+<!--mollitia nisi odit officia possimus quos ratione sapiente temporibus voluptatem voluptatum? Accusamus adipisci-->
+<!--alias aliquam aliquid amet architecto atque consequuntur corporis cupiditate dicta doloribus et fuga ipsa iusto-->
+<!--maxime minima modi natus nobis nostrum obcaecati praesentium provident quaerat, quasi quia quibusdam quod-->
+<!--recusandae repellat repellendus sunt suscipit, vel veniam vitae, voluptates! Debitis dolorum eum expedita fugit-->
+<!--hic porro similique sunt. Amet at culpa doloremque ducimus magnam, neque officiis quos saepe similique tenetur-->
+<!--voluptates.</p>-->
+<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores assumenda commodi consequuntur-->
+<!--cupiditate delectus deleniti eaque eligendi minus molestiae molestias, non odit omnis quaerat quo, reiciendis-->
+<!--repellendus temporibus, veritatis. Dolore eaque in omnis pariatur placeat sit tempora temporibus unde? At autem-->
+<!--distinctio dolores fuga harum impedit libero minima, modi quidem quo unde veritatis voluptatibus. Accusantium-->
+<!--amet, corporis cupiditate doloribus ducimus earum facilis in molestiae nam neque omnis quas quibusdam-->
+<!--repudiandae suscipit unde? Aliquid, consequatur debitis earum eligendi ipsum, nostrum numquam possimus quibusdam-->
+<!--ratione suscipit vitae voluptas. Adipisci at error exercitationem fuga, incidunt, ipsum itaque magni maxime-->
+<!--mollitia natus necessitatibus quo recusandae, soluta temporibus totam ullam voluptate. Architecto aut autem esse-->
+<!--facere id itaque laboriosam nam nihil recusandae? Ab accusamus ad animi aspernatur at atque consequuntur-->
+<!--distinctio earum eligendi et ex fuga hic impedit ipsa ipsum magnam minima minus modi nam necessitatibus nulla-->
+<!--officiis omnis perferendis possimus praesentium rem, rerum saepe sit soluta sunt tempora totam ullam unde-->
+<!--veritatis vero voluptatibus voluptatum. Ad minima omnis quam voluptas voluptatibus. Accusantium ad architecto-->
+<!--aspernatur atque blanditiis consectetur consequatur culpa debitis dicta dolores dolorum eius fugit illum itaque,-->
+<!--iusto libero minus molestiae natus nobis provident quae quas quibusdam repellendus reprehenderit sunt tempore-->
+<!--ullam vel voluptate voluptatem voluptatum. Architecto consequatur cumque exercitationem minus, repudiandae-->
+<!--similique! Accusamus alias aliquam aliquid amet blanditiis consequuntur, doloribus minima molestiae non numquam-->
+<!--officiis optio quam qui recusandae rem saepe sequi similique sunt vero voluptates? At, aut consequatur esse-->
+<!--fugiat id pariatur quae quas ut vero? Accusantium asperiores assumenda, corporis cupiditate dolorem fugiat,-->
+<!--illum iste laborum magnam minus, modi nihil optio quam quia quis quisquam reiciendis repellendus sit sunt-->
+<!--veniam. Assumenda beatae dolor doloribus nesciunt quaerat. Consequatur cumque debitis, dolor dolorum eaque-->
+<!--eligendi eos et hic id molestias, nesciunt nobis non officiis perferendis provident recusandae veritatis? Alias-->
+<!--aspernatur aut commodi culpa cumque dolore dolores eos et exercitationem fugiat harum hic in iure maiores minima-->
+<!--modi odio praesentium quas qui quia quidem quis quod similique sint sit vitae, voluptas voluptate! Eaque nam-->
+<!--reiciendis sequi. Consectetur fugiat inventore ipsa nesciunt reiciendis sed, vitae? Alias consequatur cumque-->
+<!--dicta distinctio dolores eos, error eum ex fugit iure libero nam odio perferendis quos soluta suscipit ullam ut-->
+<!--vero, voluptates voluptatibus. Accusantium commodi ducimus fugiat nulla obcaecati perferendis quisquam repellat-->
+<!--saepe temporibus voluptatibus? Eaque earum fugit maxime minima nostrum nulla possimus quis sit totam voluptatem.-->
+<!--Ad at beatae cupiditate distinctio doloremque, laborum libero maxime minus nobis quidem quis reiciendis-->
+<!--reprehenderit totam. Adipisci autem consectetur consequatur, culpa cum deserunt enim est eum iste itaque minima-->
+<!--neque officiis placeat provident quam quasi, soluta. Ab accusantium aliquid asperiores aut beatae deleniti eos-->
+<!--in iste magni, modi molestiae mollitia natus nesciunt, non officia quia, similique vitae voluptatem? Culpa-->
+<!--debitis distinctio dolore ea eaque ipsa iste, iusto labore magnam molestiae nulla optio quas quo similique-->
+<!--tempora temporibus voluptatibus! Autem commodi, debitis, dolores ducimus earum expedita inventore laborum-->
+<!--pariatur quam quisquam repudiandae suscipit tempora. Aliquam animi consequatur dolores eos excepturi illum ipsam-->
+<!--iste, magnam magni obcaecati odit officia provident quidem repellendus reprehenderit similique vel. A alias-->
+<!--architecto consequuntur distinctio enim eum expedita iusto sint vel! Accusantium eos expedita laudantium libero-->
+<!--minus nihil sit ut veniam, voluptas voluptate. Ab asperiores aspernatur atque aut consequatur cupiditate dolore-->
+<!--dolorum ducimus expedita fugiat illo itaque laboriosam maxime minima nostrum obcaecati quasi qui quis quisquam-->
+<!--recusandae repellat reprehenderit rerum, saepe sapiente sed, sequi soluta temporibus, totam ut velit veniam vero-->
+<!--vitae voluptates. Accusamus adipisci animi architecto aut blanditiis debitis deleniti dignissimos ducimus ea-->
+<!--eaque earum eos error fuga fugiat hic id iste maxime minus modi nulla obcaecati odit perferendis quod ratione,-->
+<!--reiciendis repudiandae saepe, sapiente, sequi similique temporibus totam vero voluptatem voluptates! Architecto-->
+<!--cumque deserunt, dolorum eveniet nemo qui quis quisquam quo reprehenderit sunt. Beatae harum necessitatibus-->
+<!--repudiandae vitae? At consequuntur excepturi illum laudantium minima molestias numquam quam quibusdam sint-->
+<!--tempore! Ad alias at consequatur ipsum labore laudantium molestiae nihil officiis perferendis quam quod, saepe-->
+<!--sunt temporibus, ut vitae! Dolor dolore doloribus iusto magnam molestiae obcaecati quaerat repellendus saepe-->
+<!--sint suscipit. Alias atque consectetur cumque fugiat laudantium minus voluptatem. Accusantium adipisci amet-->
+<!--aperiam aspernatur commodi, delectus doloribus ducimus enim eos illum labore laudantium molestias natus nihil-->
+<!--sit tempora tempore, velit. A accusamus, accusantium adipisci aliquam architecto, aut consequuntur dolor dolorem-->
+<!--dolorum ducimus ea eius eum expedita, itaque labore laudantium magni minus molestias nostrum obcaecati pariatur-->
+<!--perspiciatis quas quo ratione veritatis vero vitae voluptates! Animi autem consequuntur deleniti esse iusto-->
+<!--magnam modi nobis odit, officiis quod! Autem consequuntur distinctio nisi praesentium provident tempore? Ad-->
+<!--aliquam, animi, error explicabo facere fugit in ipsam iste iure necessitatibus perspiciatis quibusdam sequi sint-->
+<!--tempora ullam? Commodi cum ea eligendi, esse expedita in nam natus nesciunt, nihil quasi rerum, tenetur veniam.-->
+<!--Adipisci beatae consequatur dolor nihil omnis saepe temporibus! At blanditiis dolore perferendis porro-->
+<!--praesentium quibusdam repellat soluta vero voluptatem. Adipisci aperiam eum, excepturi explicabo fugiat id-->
+<!--itaque maxime reiciendis rerum temporibus. Architecto blanditiis expedita hic magni maiores repudiandae rerum-->
+<!--unde. Blanditiis eaque odio quasi! Accusamus ad aliquid animi blanditiis cumque debitis distinctio eos expedita-->
+<!--facere fugiat id incidunt neque nesciunt, nulla placeat qui quos reprehenderit repudiandae voluptatem-->
+<!--voluptatum. Animi asperiores ducimus eaque enim ipsam porro saepe suscipit voluptas? Accusantium consectetur-->
+<!--debitis delectus, eum maiores mollitia saepe tenetur? Aliquam at atque cupiditate dolore esse non placeat-->
+<!--praesentium quam rem! Adipisci et numquam voluptate. Consectetur consequatur doloremque mollitia nostrum-->
+<!--voluptates! Cumque eaque enim, eum fuga, hic in laboriosam officia possimus quaerat recusandae, repellendus-->
+<!--velit? Ab accusamus, dolorem est in maxime nihil porro quo repudiandae similique sint voluptatem voluptates?-->
+<!--Accusamus autem commodi consequuntur culpa deleniti dicta dignissimos doloribus eos, iure laudantium minima-->
+<!--mollitia nisi odit officia possimus quos ratione sapiente temporibus voluptatem voluptatum? Accusamus adipisci-->
+<!--alias aliquam aliquid amet architecto atque consequuntur corporis cupiditate dicta doloribus et fuga ipsa iusto-->
+<!--maxime minima modi natus nobis nostrum obcaecati praesentium provident quaerat, quasi quia quibusdam quod-->
+<!--recusandae repellat repellendus sunt suscipit, vel veniam vitae, voluptates! Debitis dolorum eum expedita fugit-->
+<!--hic porro similique sunt. Amet at culpa doloremque ducimus magnam, neque officiis quos saepe similique tenetur-->
+<!--voluptates.</p>-->
+<!--</div>-->
+<!--<a href="#" id="scrollLink">Scroll to top</a>-->
+
+
+<!-- Координаты в окне -->
+<!--<button id="cordBtn" class="cordBtn" type="button">Button cord</button>-->
+
+
+<!-- Встроенный пример -->
+<!--<button id="btn" onclick="alert('Hello JavaScript')">Open inline alert()</button>-->
+
+<!-- По клику вызываем функцию, которая описана в другом файле -->
+<!--<button id="btn" onclick="hello()">Call function()</button>-->
+
+<!-- Устанавливаем обработчик в JS -->
+<!--<button id="btn">Handler from JS</button>-->
+
+<!-- Устанавливаем обработчик в JS второй вариант -->
+<!--<button id="btn">Handler from JS</button>-->
+
+<!-- Назначаем 2 обработчика -->
+<!--<button id="btn" onclick="alert('Обрпботчик из аттрибута')">Два обработчика</button>-->
+<!---->
+<!-- Доступ к элементу через this -->
+<!--<button id="btn" onclick="alert(this.innerHTML)">Текст с кнопки</button>-->
+
+<!-- Несколько обработчиков на одно событие -->
+<!--<div class="circle-block">-->
+<!--<span id="circle" class="circle">-->
+<!--<i class="fa fa-refresh" aria-hidden="true"></i>-->
+<!--</span>-->
+<!--</div>-->
+
+<!-- Объект события -->
+<!--<button id="btn">Event object</button>-->
+<!--<button id="btn" onclick="alert(event.type)">Event object</button>-->
+
+<!-- Делегирование событий -->
+<!--<table id="myTable">-->
+<!--<tr>-->
+<!--<td></td>-->
+<!--<td></td>-->
+<!--<td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td></td>-->
+<!--<td></td>-->
+<!--<td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td></td>-->
+<!--<td></td>-->
+<!--<td></td>-->
+<!--</tr>-->
+<!--</table>-->
+
+<!-- Приём проектирования "поведение" -->
+<!--<button data-counter>1</button>-->
+<!--<button data-counter>2</button>-->
+<!---->
+
+<!-- Псевдомассив form.elements -->
+<!--<fieldset>-->
+<!--<legend>Login frm</legend>-->
+<!--<form action="#" name="login" id="login">-->
+<!--<input type="text" name="login" placeholder="Login..."><br><br>-->
+<!--<input type="password" name="password" placeholder="Password..."><br><br>-->
+<!--<label for="save">Save-->
+<!--<input type="checkbox" name="save" id="save">-->
+<!--</label>-->
+<!--<label for="notSave">Not save-->
+<!--<input type="checkbox" name="not-save" id="notSave"  value="notSave">-->
+<!--</label>-->
+<!--<br><br>-->
+<!--<input type="submit" name="loginBtn" value="Login">-->
+<!--</form>-->
+<!--</fieldset>-->
+
+
+<!--<div>-->
+<!--<form action="#">-->
+<!--<input type="text" name="search" id="search">-->
+<!--</form>-->
+<!--<ul>-->
+<!--<li>Category 1</li>-->
+<!--<li>Category 2</li>-->
+<!--<li>Category 3</li>-->
+<!--<li>Category 4</li>-->
+<!--<li>Category 5</li>-->
+<!--<li>Category 6</li>-->
+<!--<li>Category 7</li>-->
+<!--<li>Category 8</li>-->
+<!--<li>Category 9</li>-->
+<!--<li>Category 10</li>-->
+<!--</ul>-->
+<!--</div>-->
+
+
+<script src="js/lesson13.js">
+</script>
+</body>
+</html>

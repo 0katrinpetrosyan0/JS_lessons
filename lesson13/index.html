@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        label {
+            width: 500px;
+        }
+
+        body {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-group">
+        <label>Set Top Left Radius</label>
+        <input type="range" id="myRange1" value="0" min="0" max="150" />
+    </div>
+    <div class="form-inline">
+        <input type="text1" id="slide_text1" class="form-control" value="0" size="4" readonly="readonly" />
+    </div>
+
+    <div class="form-group">
+        <label>Set Top Right Radius</label>
+        <input type="range" id="myRange2" value="0" min="0" max="150" />
+    </div>
+    <div class="form-inline">
+        <input type="text2" id="slide_text2" class="form-control" value="0" size="4" readonly="readonly" />
+    </div>
+
+    <div class="form-group">
+        <label>Set Bottom Right Left Radius</label>
+        <input type="range" id="myRange3" value="0" min="0" max="150" />
+    </div>
+    <div class="form-inline">
+        <input type="text3" id="slide_text3" class="form-control" value="0" size="4" readonly="readonly" />
+    </div>
+
+    <div class="form-group">
+        <label>Set Bottom Left Radius</label>
+        <input type="range" id="myRange4" value="0" min="0" max="150" />
+    </div>
+    <div class="form-inline">
+        <input type="text4" id="slide_text4" class="form-control" value="0" size="4" readonly="readonly" />
+    </div>
+
+
+    <br /><br />
+    <div id="border" style="width:300px; height:300px; background-color:pink; border:2px solid #000;"></div>
+    <script>
+        let range1 = document.getElementById("myRange1")
+        range1.oninput = function () {
+            let text1 = document.getElementById("slide_text1");
+            let border = document.getElementById("border")
+            text1.value = range1.value;
+
+            border.style.borderTopLeftRadius = range1.value + "px";
+        }
+        let range2 = document.getElementById("myRange2")
+        range2.oninput = function () {
+            let text2 = document.getElementById("slide_text2");
+            let border = document.getElementById("border")
+            text2.value = range2.value;
+
+            border.style.borderTopRightRadius = range2.value + "px";
+        }
+        let range3 = document.getElementById("myRange3")
+        range3.oninput = function () {
+            let text3 = document.getElementById("slide_text3");
+            let border = document.getElementById("border")
+            text3.value = range3.value;
+
+            border.style.borderBottomRightRadius = range3.value + "px";
+        }
+        let range4 = document.getElementById("myRange4")
+        range4.oninput = function () {
+            let text4 = document.getElementById("slide_text4");
+            let border = document.getElementById("border")
+            text4.value = range4.value;
+
+            border.style.borderBottomLeftRadius = range4.value + "px";
+        }
+    </script>
+</body>
+
+</html>

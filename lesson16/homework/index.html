@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #myImg {
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            justify-content: center;
+            align-self: center;
+        }
+
+        #myImg:hover {
+            opacity: 0.7;
+        }
+
+        .global {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: lightgrey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+
+        .modal {
+            width: 600px;
+            height: 500px;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            height: 80%;
+            width: 80%;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="myImg" src="1.jpg" style="width:200px">
+    <img id="myImg" src="2.jpg" style="width:200px"></img>
+    <img id="myImg" src="3.jpg" style="width:200px"></img>
+    <img id="myImg" src="4.jpg" style="width:200px"></img>
+    <div class="global">
+        <div class="modal">
+            <span class="close">&#215;</span>
+            <img class="modal-content" id="img1">
+        </div>
+    </div>
+    <script>
+        let img = document.getElementsByTagName("img");
+        let modalImg = document.getElementById("img1");
+        let modal = document.getElementsByClassName("modal")[0];
+        let close = document.getElementsByClassName("close")[0];
+        let global = document.getElementsByClassName("global")[0];
+        for (var i = 0; i < img.length; i++) {
+            img[i].onclick = function () {
+                console.log(this.getAttribute("src"));
+                global.style.display = "flex";
+                modalImg.src = this.src;
+            }
+        }
+        close.onclick = function () {
+            global.style.display = "none";
+        }
+        global.onclick = function (e) {
+            console.log(e.target);
+            if (e.target.className == "global") {
+                global.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

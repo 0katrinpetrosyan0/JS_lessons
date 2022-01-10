@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//     var arr = [1,2,3,4,5,6,7,8,9];
+//     var min = arr[0];
+// function arrayMin(arr) {
+//  for (var  index = 1; index < arr.length; index++) {
+//      if(arr[index] <= min){
+//          min = arr[index]
+    
+//      }
+
+     
+//  }
+//  return min;
+// }
+// alert(arrayMin(arr));
+
+
+// var arr = [1,2,3,4,5,6,7,8,9];
+//   function arrayMax(arr) {
+     
+//      var max = arr[0];
+//      for (var i = 1; i < arr.length; i++) {
+//  if(arr[i] >= max){
+//      max = arr[i]
+//  }
+
+//      }
+//       return max;
+//   }
+//   alert(arrayMax(arr));
+
+// function factorial(n) {
+//     if (n < 2) {
+//         return 1
+//     }
+//     return n * factorial(n-1);
+// }
+// alert(factorial(5))
+
+// function sumTo(n) {
+//     if(n<2){
+//         return 1;
+//     }
+//     return n+sumTo(n-1);
+// }
+// alert(sumTo(2));
+
+// var arr = [1,2,3];
+// var total=0;
+// function sumArr(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if(arr[i]){
+//             total += arr[i];
+//         }
+//     }
+//     return total;
+// }
+// alert(sumArr(arr));
+  
+  
+//  var names = ["Katrin", "Shirak", "Artur"];
+//  function newArr(names) {
+//      for (var i = 0; i < names.length; i++) {
+     
+         
+//      }
+//  }
+//  alert (newArr(names))
+
+// var str = ['a', 'aa', 'aaa', 'aaaa'];
+// var num;
+// function func(num) {    
+//     for (var i = 0; i < str.length; i++) { 
+//                str[i] = str[i].length;       
+//                 }   
+//               return  num;  
+//                 }
+// alert(func(str))
+var names = ["Armen", "Tigran", "Ashot", "Lilit", "Vanuhi", "Vardan", "Ashot"];
+ var unicalNames = [];
+
+function func(names) {
+    for (var i = 0; i < names.length; i++) {
+         for (var j = 0; j < unicalNames.length; j++) {
+        if(names[i] == unicalNames[j]){
+            break;
+            if (unicalnames[j] == unicalNames.length-1) {
+                unicalNames = names[i]
+            }
+        }
+            
+        } 
+           
+    
+        } 
+        return unicalNames
+    }
+alert(func(unicalNames));
+    </script>
+</body>
+</html>

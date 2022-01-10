@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: blanchedalmond;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid deeppink;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: deeppink;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 16px;
+            border: 3px dotted deeppink;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" name="form">
+        <div class="container">
+            <div>
+                <label><b>Username:</b></label>
+                <input type="text" id="text" placeholder="Enter Username" name="text" required>
+            </div>
+            <br>
+            <div>
+                <label><b>Email:</b></label>
+                <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email"
+                    placeholder="Enter E-mail" name="email" required>
+            </div>
+            <br>
+            <div>
+                <label><b>Password:</b></label>
+                <input type="password"  id="password" placeholder="Enter Password" name="password"
+                    required>   
+            </div>
+            <br>
+            <div>
+                <label><b>Repeat Password:</b></label>
+                <input type="password"  id="confirmPassword" placeholder="Confirm Password"
+                    name="password" required>
+                <span id='msgp'></span>
+            </div>
+            <br>
+            <div>
+                <label for="male">
+                    <input type="radio" id="male" name="radio" value="male"> male</label>
+                <label for="female">
+                    <input type="radio" id="female" name="radio" valu="female"> female</label>
+            </div>
+            <br>
+
+            <button type="submit" id="submit">Submit</button>
+            <br>
+            <div>
+                <input type="checkbox" checked="checked" name="checkbox" id="Remember">Remember Password!!
+                <span class="psw"><a href="#">forgot password?</a></span>
+            </div>
+        </div>
+    </form>
+    <script>
+        let msgp = document.getElementById("msgp");
+        let text = document.forms["form"]["text"];
+        let email = document.forms["form"]["email"];
+        let password = document.getElementById("password");
+        let confirmPassword = document.getElementById("confirmPassword");
+        let submit = document.getElementById("submit");
+    
+        text.oninput = function () {
+            let x = this.value.split("");
+            for (let i = 0; i < x.length; i++) {
+                if (!isNaN(x[i])) {
+                    x.splice(i--, 1);
+                }
+            }
+            this.value = x.join("")
+        }
+        submit.onclick = function () {
+            if (text.value == null || text.value == "") {
+                alert("Please enter the username.");
+                return false;
+            }else if (email.value == "") {
+                alert("Please enter the email.");
+                return false;
+            }else if (msgp.innerHTML == "wrong" || msgp.innerHTML == "must contains min 6 number") {
+                alert("check password again");
+                return false;
+            }
+                alert('Login successful');
+        }
+        confirmPassword.onkeyup = function () {
+            if (password.value !== confirmPassword.value) {
+                msgp.style.color = 'green';
+                msgp.innerHTML = 'wrong';
+            }else if(password.value.length<6 ){
+                msgp.innerHTML ="must contain  min 6 number"
+            } else {
+                msgp.style.color = 'green';
+                msgp.innerHTML = 'true';
+
+            }
+        }
+// console.log(confirmPassword.value);
+    </script>
+</body>
+
+</html>
